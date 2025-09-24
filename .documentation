@@ -1,0 +1,6 @@
+docker run -it -v $(pwd):/app -w /app -p 8000:8000 php:8.3-cli bash
+
+
+docker exec -it effd8ff4ace9 psql -U postgres -c "CREATE DATABASE isndb;"
+
+docker exec -it effd8ff4ace9 psql -U postgres -l
