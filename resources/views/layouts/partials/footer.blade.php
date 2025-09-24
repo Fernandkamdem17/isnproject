@@ -1,9 +1,12 @@
 <!-- Buttons flottants à gauche -->
 <div class="floating-buttons">
+    <a href="#" class="btn-floating btn-news" title="Actualités">
+        <i class="fas fa-newspaper"></i>
+    </a>
     <a href="#" target="_blank" class="btn-floating btn-whatsapp" title="WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
-    <a href="#" class="btn-floating btn-translate" title="Traduction A">
+    <a href="#" class="btn-floating btn-translate" title="Traduction">
         <i class="fas fa-language"></i>
     </a>
 </div>
@@ -93,7 +96,7 @@
                     <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-tiktok"></i></a>
                     <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-whatsApp"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
 

@@ -17,11 +17,30 @@
                 <a href="{{route('home')}}" class="nav-item nav-link">Accueil</a>
                 <a href="{{route('about')}}" class="nav-item nav-link">A propos</a>
                 <div class="nav-item dropdown">
-                    <a href="{{route('formations')}}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Formations</a>
+                    <a href="{{ route('formations') }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Formations</a>
                     <div class="dropdown-menu fade-down m-0">
-                        <a href="#" class="dropdown-item">Our Team</a>
-                        <a href="#" class="dropdown-item">Testimonial</a>
-                        <a href="#" class="dropdown-item">404 Page</a>
+                        <!-- Section Numérique -->
+                        <h6 class="dropdown-header">Numérique</h6>
+                        <a href="#" class="dropdown-item">Développement Web</a>
+                        <a href="#" class="dropdown-item">Cybersécurité</a>
+                        <a href="#" class="dropdown-item">Data Science</a>
+
+                        <div class="dropdown-divider"></div>
+
+                        <!-- Section Paramédical -->
+                        <h6 class="dropdown-header">Paramédical</h6>
+                        <a href="#" class="dropdown-item">Infirmier</a>
+                        <a href="#" class="dropdown-item">Aide-soignant</a>
+                        <a href="#" class="dropdown-item">Pharmacie</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="{{ route('formations') }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Langues</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="#" class="dropdown-item">Anglais</a>
+                        <a href="#" class="dropdown-item">Allemand</a>
+                        <a href="#" class="dropdown-item">Italien</a>
+                        <a href="#" class="dropdown-item">Espagnol</a>
                     </div>
                 </div>
                 <a href="{{route('faqs')}}" class="nav-item nav-link">FAQs</a>

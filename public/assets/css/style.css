@@ -3,6 +3,16 @@
     --primary: #FFA500;
     --light: #F0FBFC;
     --dark: #181d38;
+    --default-color: #444444;
+}
+
+.bg-light{
+    background-color: rgba(0, 0, 128, 0.5) !important; /* Bleu marine avec 50% de transparence */
+}
+
+.light-background {
+  --background-color: #f7f7f7;
+  --surface-color: #ffffff;
 }
 
 .text-primary{
@@ -141,11 +151,22 @@
   margin-right: 8px;
 }
 
+.navbar  .dropdown .dropdown-menu {
+  background: var(--dark);
+  color: #fff;
+}
+.navbar  .dropdown .dropdown-menu .dropdown-item{
+  color: #fff;
+  font-size: 11pt;
+}
+.navbar  .dropdown .dropdown-menu .dropdown-item:hover{
+  background: var(--primary);
+}
+.navbar  .dropdown .dropdown-menu .dropdown-divider{
+  background: var(--primary);
+}
+
 .navbar-light .navbar-nav .nav-link {
-    margin-right: 30px;
-    padding: 25px 0;
-    color: #FFFFFF;
-    font-size: 15px;
     text-transform: uppercase;
     outline: none;
 }
@@ -310,7 +331,7 @@
 /**Bouton flottants**/
 .floating-buttons {
     position: fixed;
-    top:85%;
+    top:80%;
     left: 0;
     transform: translateY(-50%);
     display: flex;
@@ -348,6 +369,14 @@
      color: #FFFFFF;
     background-color: #0056b3 !important;
 }
+.btn-news {
+    background-color: red;
+}
+.btn-news:hover {
+    color: #FFFFFF;
+    background-color: darkred !important; 
+}
+
 
 .floating-assist {
     position: fixed;
@@ -368,6 +397,8 @@
     align-items: center;
     justify-content: center;
 }
+
+
 
 
 /**Formulaire IA**/
@@ -440,34 +471,197 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-/*** Service ***/
-.service-item {
+/*** Atout ***/
+.atout-item {
     border:1px solid var(--dark);
     transition: .5s;
 }
 
-.service-item:hover {
+.atout-item:hover {
     margin-top: -10px;
     background: var(--dark);
 }
 
-.service-item * {
+.atout-item * {
     transition: .5s;
 }
 
-.service-item:hover * {
+.atout-item:hover * {
     color: var(--light) !important;
 }
 
 
-/*** Categories***/
-.category img{
+/*** Domains***/
+.domain img{
     transition: .5s;
 }
 
-.category a:hover img{
+.domain a:hover img{
     transform: scale(1.1);
 }
+
+
+/*** Why Us***/
+
+.why-us .why-us-item {
+  background-color: var(--surface-color);
+  box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  padding: 60px 30px;
+  text-align: center;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.why-us .why-us-item .icon {
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease-in-out 0.3s;
+  position: relative;
+}
+
+.why-us .why-us-item .icon i {
+  font-size: 36px;
+  transition: 0.5s;
+  position: relative;
+}
+
+.why-us .why-us-item .icon svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.why-us .why-us-item .icon svg path {
+  transition: 0.5s;
+  fill: color-mix(in srgb, var(--default-color), transparent 95%);
+}
+
+.why-us .why-us-item h3 {
+  font-weight: 700;
+  margin: 10px 0 15px 0;
+  font-size: 22px;
+}
+
+.why-us .why-us-item p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.why-us .why-us-item:hover {
+  box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.1);
+}
+
+.why-us .why-us-item.item-cyan i {
+  color: #0dcaf0;
+}
+
+.why-us .why-us-item.item-cyan:hover .icon i {
+  color: #fff;
+}
+
+.why-us .why-us-item.item-cyan:hover .icon path {
+  fill: #0dcaf0;
+}
+
+.why-us .why-us-item.item-orange i {
+  color: #fd7e14;
+}
+
+.why-us .why-us-item.item-orange:hover .icon i {
+  color: #fff;
+}
+
+.why-us .why-us-item.item-orange:hover .icon path {
+  fill: #fd7e14;
+}
+
+.why-us .why-us-item.item-teal i {
+  color: #20c997;
+}
+
+.why-us .why-us-item.item-teal:hover .icon i {
+  color: #fff;
+}
+
+.why-us .why-us-item.item-teal:hover .icon path {
+  fill: #20c997;
+}
+
+.why-us .why-us-item.item-red i {
+  color: #df1529;
+}
+
+.why-us .why-us-item.item-red:hover .icon i {
+  color: #fff;
+}
+
+.why-us .why-us-item.item-red:hover .icon path {
+  fill: #df1529;
+}
+
+.why-us .why-us-item.item-indigo i {
+  color: #6610f2;
+}
+
+.why-us .why-us-item.item-indigo:hover .icon i {
+  color: #fff;
+}
+
+.why-us .why-us-item.item-indigo:hover .icon path {
+  fill: #6610f2;
+}
+
+.why-us .why-us-item.item-pink i {
+  color: #f3268c;
+}
+
+.why-us .why-us-item.item-pink:hover .icon i {
+  color: #fff;
+}
+
+.why-us .why-us-item.item-pink:hover .icon path {
+  fill: #f3268c;
+}
+.why-us .why-us-item.item-purple i {
+  color: #9c27b0;
+}
+
+.why-us .why-us-item.item-purple:hover .icon i {
+  color: #fff;
+}
+
+.why-us .why-us-item.item-purple:hover .icon path {
+  fill: #9c27b0;
+}
+.why-us .why-us-item.item-deep-orange i {
+  color: #ff5722;
+}
+
+.why-us .why-us-item.item-deep-orange:hover .icon i {
+  color: #fff;
+}
+
+.why-us .why-us-item.item-deep-orange:hover .icon path {
+  fill: #ff5722;
+}
+.why-us .why-us-item.item-deep-purple i {
+  color: #673ab7;
+}
+
+.why-us .why-us-item.item-deep-purple:hover .icon i {
+  color: #fff;
+}
+
+.why-us .why-us-item.item-deep-purple:hover .icon path {
+  fill: #673ab7;
+}
+
 
 
 
