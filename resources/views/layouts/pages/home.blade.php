@@ -553,44 +553,11 @@
 
 
     <!-- Testimonial Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="text-center">
-                <h6 class="section-title bg-white text-center text-primary px-3">Témoignages</h6>
-                <h1 class="mb-5">Ce que disent nos étudiants!</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel position-relative">
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Willy Happy</h5>
-                    <p>Graphisme de Production</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">J'ai choisi l'ISN pour sa pédagogie axée sur la pratique. Les nombreux projets réalisés pendant ma formation m'ont permis de maîtriser les logiciels indispensables et de développer mon sens créatif.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Alane SEKOUE</h5>
-                    <p>Montage Audiovisuel</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Suite à ma formation au sein de l'ISN, j'ai acquis les compétences nécessaires pour donner vie à mes idées créatives. Les cours pratiques et les équipements de pointe m'ont permis de maîtriser les logiciels de montage les plus utilisés dans le secteur.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Bill DJOMO</h5>
-                    <p>Marketing Digital</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Grâce à cette formation en marketing digital, j'ai acquis les compétences clés pour lancer ma propre entreprise en ligne. Les cours pratiques et les projets concrets m'ont permis de rapidement obtenir des résultats palpables.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('layouts.pages.testimonial')
     <!-- Testimonial End -->
     
 
-    <!-- Testimonial Start -->
+    <!-- Why Us Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="text-center">
@@ -616,7 +583,7 @@
                         </a>
                         <p>Profitez d'une connexion internet haut débit pour vos recherches et travaux en ligne.</p>
                         </div>
-                    </div><!-- End Service Item -->
+                    </div><!-- End Why Us Item -->
 
                     <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
                         <div class="why-us-item item-orange position-relative">
@@ -631,7 +598,7 @@
                         </a>
                         <p>Chaque salle est équipée de vidéo projecteurs pour un apprentissage visuel interactif.</p>
                         </div>
-                    </div><!-- End Service Item -->
+                    </div><!-- End Why Us Item -->
 
                     <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
                         <div class="why-us-item item-teal position-relative">
@@ -646,7 +613,7 @@
                         </a>
                         <p>Des ordinateurs portables sont mis à disposition des apprenants pour les cours pratiques.</p>
                         </div>
-                    </div><!-- End Service Item -->
+                    </div><!-- End Why Us Item -->
 
                     <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
                         <div class="why-us-item item-red position-relative">
@@ -662,7 +629,7 @@
                         <p>Votre boussole pour naviguer dans le monde des études.L'orientation, c'est notre métier. Votre réussite, notre passion.</p>
                         <a href="service-details.html" class="stretched-link"></a>
                         </div>
-                    </div><!-- End Service Item -->
+                    </div><!-- End Why Us Item -->
 
                     <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
                         <div class="why-us-item item-indigo position-relative">
@@ -678,7 +645,7 @@
                         <p>Avec l'ISN, vous apprenez sans vous ruiner. Des tarifs qui s'adaptent à votre budget.</p>
                         <a href="service-details.html" class="stretched-link"></a>
                         </div>
-                    </div><!-- End Service Item -->
+                    </div><!-- End Why Us Item -->
 
                     <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
                         <div class="why-us-item item-pink position-relative">
@@ -694,7 +661,7 @@
                         <p>Nos formateurs sont des professionnels expérimentés, à votre écoute pour vous accompagner dans votre apprentissage.</p>
                         <a href="service-details.html" class="stretched-link"></a>
                         </div>
-                    </div><!-- End Service Item -->
+                    </div><!-- End Why Us Item -->
 
                     <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
                         <div class="why-us-item item-deep-orange position-relative">
@@ -710,7 +677,7 @@
                         <p>Développez vos savoir-faire grâce à des exercices concrets et des projets réels.</p>
                         <a href="service-details.html" class="stretched-link"></a>
                         </div>
-                    </div><!-- End Service Item -->
+                    </div><!-- End Why Us Item -->
 
                     <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
                         <div class="why-us-item item-deep-purple position-relative">
@@ -726,7 +693,7 @@
                         <p>Obtenez votre attestation de formation, document officiel attestant de vos nouvelles compétences et valorisez votre parcours professionnel.</p>
                         <a href="service-details.html" class="stretched-link"></a>
                         </div>
-                    </div><!-- End Service Item -->
+                    </div><!-- End Why Us Item -->
 
                     <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
                         <div class="why-us-item item-purple position-relative">
@@ -742,7 +709,7 @@
                         <p>En vous inscrivant, recevez gratuitement un polo et d'un jogging à votre taille.Profitez de notre offre spéciale : un polo personnalisé offert pour toute inscription.</p>
                         <a href="service-details.html" class="stretched-link"></a>
                         </div>
-                    </div><!-- End Service Item -->
+                    </div><!-- End Why Us Item -->
 
                 </div>
             </div>

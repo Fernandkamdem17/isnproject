@@ -1,14 +1,28 @@
 <!-- Buttons flottants à gauche -->
 <div class="floating-buttons">
-    <a href="#" class="btn-floating btn-news" title="Actualités">
+    <a href="{{route('actualites')}}" class="btn-floating btn-news" title="Actualités">
         <i class="fas fa-newspaper"></i>
     </a>
     <a href="#" target="_blank" class="btn-floating btn-whatsapp" title="WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
-    <a href="#" class="btn-floating btn-translate" title="Traduction">
+    {{-- <a href="#" class="btn-floating btn-translate" title="Traduction">
         <i class="fas fa-language"></i>
-    </a>
+    </a> --}}
+    <div class="btn-group dropup floating-translate">
+    <button type="button" class="btn btn-secondary dropdown-toggle btn-floating" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fas fa-language"></i>
+    </button>
+    <ul class="dropdown-menu">
+        <li class="dropdown-header d-flex justify-content-between align-items-center">
+            <span>Choisir la langue</span>
+            <button class="btn btn-sm btn-light" onclick="this.closest('.dropdown-menu').classList.remove('show')">X</button>
+        </li>
+        <li><a class="dropdown-item" href="?lang=fr"><img src="{{asset('assets/img/fr.png')}}" alt="French Flag"> Français</a></li>
+        <li><a class="dropdown-item" href="?lang=en"><img src="{{asset('assets/img/en.png')}}" alt="English Flag">English</a></li>
+    </ul>
+</div>
+
 </div>
 <!-- Bouton flottant à droite -->
 <div class="floating-assist">
@@ -42,8 +56,6 @@
     <div id="input-area" class="d-flex p-2 bg-primary"
         data-route="{{ route('chatbot') }}" 
         data-token="{{ csrf_token() }}">
-      {{-- <input id="userInput" type="text" class="form-control rounded-pill" placeholder="Écrivez un message...">
-      <button class="btn btn-primary ms-2 rounded-pill" onclick="sendMessage()">Envoyer</button> --}}
       <form id="chatForm" class="d-flex p-2 bg-primary">
             <input id="userInput" type="text" class="form-control rounded-pill" placeholder="Écrivez un message..." required>
             <button type="submit" class="btn btn-primary ms-2 rounded-pill">Envoyer</button>
@@ -55,7 +67,7 @@
 </div>
 
 
-<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+<div class="container-fluid bg-dark text-light footer pt-3 mt-3 wow fadeIn" data-wow-delay="0.1s">
     <div class="container py-5">
         <div class="row g-5">
             

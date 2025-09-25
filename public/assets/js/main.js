@@ -128,9 +128,10 @@
             liveToast.show();
         });
     }
+
+    
     
 })(jQuery);
-
 
 
 function showWelcomeMessage() {
@@ -157,42 +158,6 @@ function showWelcomeMessage() {
       }, 2000);
     }
 
-    // function sendMessage() {
-    //   let userText = document.getElementById("userInput").value;
-    //   if (!userText) return;
-
-    //   let chatbox = document.getElementById("chatbox");
-
-    //   // Message utilisateur
-    //   let userMsg = document.createElement("div");
-    //   userMsg.className = "message user";
-    //   userMsg.innerText = userText;
-    //   chatbox.appendChild(userMsg);
-
-    //   // Indicateur "..."
-    //   let typingIndicator = document.createElement("div");
-    //   typingIndicator.className = "typing";
-    //   typingIndicator.innerHTML = '<div class="dot"></div><div class="dot"></div><div class="dot"></div>';
-    //   chatbox.appendChild(typingIndicator);
-    //   chatbox.scrollTop = chatbox.scrollHeight;
-
-    //   fetch("chatbot.php", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //     body: "message=" + encodeURIComponent(userText)
-    //   })
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     typingIndicator.remove();
-    //     let botMsg = document.createElement("div");
-    //     botMsg.className = "message assistant";
-    //     botMsg.innerText = data.response;
-    //     chatbox.appendChild(botMsg);
-    //     chatbox.scrollTop = chatbox.scrollHeight;
-    //   });
-
-    //   document.getElementById("userInput").value = "";
-    // }
 
     document.getElementById("chatForm").addEventListener("submit", function(e) {
     e.preventDefault(); // Empêche le rechargement de page
@@ -260,3 +225,37 @@ var toastEl = document.getElementById('liveToast');
 toastEl.addEventListener('hidden.bs.toast', function () {
     document.getElementById('chatbox').innerHTML = "";
 });
+
+//Initialisation Pure Counter
+window.addEventListener('DOMContentLoaded', (event) => {
+    if (typeof PureCounter !== "undefined") {
+        new PureCounter();
+    } else {
+        console.error("PureCounter n’est pas chargé !");
+    }
+});
+
+//Initialisation glightbox
+const lightbox = GLightbox({
+    selector: '.glightbox',
+    loop: true,           // permet de naviguer en boucle
+    autoplayVideos: false // si tu as des vidéos, sinon false
+});
+
+
+//Traduction
+const translateBtn = document.querySelector('.btn-translate');
+const dropdown = document.querySelector('.dropdown-languages');
+
+translateBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+});
+
+// Fermer si on clique à l'extérieur
+document.addEventListener('click', (e) => {
+    if (!translateBtn.contains(e.target)) {
+        dropdown.style.display = 'none';
+    }
+});
+

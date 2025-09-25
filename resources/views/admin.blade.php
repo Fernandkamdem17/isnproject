@@ -29,6 +29,13 @@
     @yield('content')
         
 
+    <div class="container">
+        <div class="row m-0 p-0">
+            <div class="col-12">
+                <p class="slogan">Donnons ensemble un nouvel élan à votre carrière!!!</p>
+            </div>
+        </div>
+    </div>
     <!-- Footer Start -->
     @include('layouts.partials.footer')
     <!-- Footer End -->

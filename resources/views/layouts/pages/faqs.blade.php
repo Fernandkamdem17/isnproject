@@ -58,9 +58,4 @@
 
 
 
- @include('layouts.pages.partner')
-
- @include('layouts.pages.customer')
-
-
 @endsection
