@@ -228,6 +228,6 @@
 
 <!-- Testimonial Start -->
     @include('layouts.pages.testimonial')
-    <!-- Testimonial End -->
+<!-- Testimonial End -->
 
 @endsection

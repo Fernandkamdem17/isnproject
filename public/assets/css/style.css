@@ -122,7 +122,19 @@
 
 .btn-primary{
     background-color: var(--primary) !important;
-    border-color: var(--primary);
+    border-color: var(--primary) !important;
+}
+
+
+.btn-check:focus+.btn-primary,.btn-primary:focus {
+    box-shadow: 0 0 0 .25rem var(--primary) !important
+}
+
+
+.btn-primary:disabled,.btn-primary.disabled {
+    color: #000;
+    background-color: #06BBCC;
+    border-color: #06BBCC
 }
 .bg-primary{
     background-color: var(--dark) !important;
@@ -144,6 +156,8 @@
     bottom: 45px;
     z-index: 99;
 }
+
+
 
 
 /*** Spinner ***/
@@ -602,15 +616,13 @@
 
 .floating-translate .dropdown-menu {
     min-width: 180px;
-    background: gray;
-    border: none;
-    /* border-radius: 10px; */
+    background: #fff;
+    border: 1px solid gray;
 }
 
 .floating-translate .dropdown-menu a.dropdown-item {
     color: #333;
     padding: 8px 12px;
-    /* transition: background 0.2s; */
 }
 .dropdown-menu  img {
     height: 15px;
@@ -655,6 +667,56 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/**FAQs**/
+.faq-accordion .accordion-item {
+  border: none;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-accordion .accordion-item:hover {
+  transform: translateX(-4px);
+  box-shadow: 0 12px 10px rgba(0,0,0,0.15);
+}
+
+.faq-accordion .accordion-button {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #333;
+  background: transparent;
+  padding: 1rem 1.2rem;
+  transition: all 0.4s ease;
+}
+
+
+.faq-accordion .accordion-button:not(.collapsed) {
+  color: #fff;
+  background: var(--dark);
+  box-shadow: inset 0 -3px 10px rgba(0,0,0,0.2);
+}
+
+
+.faq-accordion .accordion-body {
+  background: #ffffffd9;
+  padding: 1.2rem;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.7;
+  border-top: 1px solid var(--dark);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 
@@ -967,7 +1029,7 @@
 }
 
 .testimonial-carousel .owl-item.center .testimonial-text {
-    background: var(--primary) !important;
+    background: var(--dark) !important;
 }
 
 .testimonial-carousel .owl-item.center .testimonial-text * {
@@ -992,8 +1054,8 @@
 }
 
 .testimonial-carousel .owl-dot.active {
-    background: var(--primary);
-    border-color: var(--primary);
+    background: var(--dark);
+    border-color: var(--dark);
 }
 
 
