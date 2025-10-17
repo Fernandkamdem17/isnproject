@@ -1,5 +1,5 @@
 
-@extends('admin')
+@extends('master')
 @section('title')
     Faqs - ISN-Bafoussam
 @endsection
@@ -47,13 +47,8 @@
                 <a href="{{route('actualites')}}" class="nav-item nav-link">Actualités</a>
                 <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Inscription<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="{{route('login')}}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Connexion<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
-        <!-- Bouton visible partout -->
-            {{-- <a href="#" class="btn-inscription d-block d-lg-inline-flex">
-        <span class="d-none d-sm-inline">Inscription</span> 
-        <i class="fa fa-arrow-right"></i>
-        </a> --}}
 
     </nav>
 @endsection

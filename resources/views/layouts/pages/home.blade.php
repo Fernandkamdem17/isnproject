@@ -1,5 +1,5 @@
 
-@extends('admin')
+@extends('master')
 @section('title')
     Accueil - ISN-Bafoussam
 @endsection
@@ -47,7 +47,7 @@
                 <a href="{{route('actualites')}}" class="nav-item nav-link">Actualités</a>
                 <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="#" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Inscription<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="{{route('login')}}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Connexion<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
 @endsection
