@@ -1,7 +1,17 @@
 <?php
 
 use App\Http\Controllers\ChatbotController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+
 
 /** Routes pour chatbots **/
 Route::post('/chatbot', [ChatbotController::class, 'chat'])->name('chatbot');
@@ -28,63 +38,59 @@ Route::get('/faqs', function () {
 })->name('faqs');
 
 
-Route::middleware('auth::sanctum')->name('admin.')->group(function () {
-    Route::get('/admin-dashboard', function () {
+
+Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
+    Route::get('/dashboard', function () {
         return view('layouts.pages.admin-home');
     })->name('dashboard');
 
 
-    Route::get('/trainings/list', function () {
+    Route::get('/trainings/list/list', function () {
         return view('layouts.pages.trainings.index');
     })->name('trainings.index');
-    Route::get('/trainings/create', function () {
+    Route::get('/trainings/create/list', function () {
         return view('layouts.pages.trainings.create');
     })->name('trainings.create');
 
 
-    Route::get('/admin-modules', function () {
+    Route::get('/modules/list', function () {
         return view('layouts.pages.modules.index');
     })->name('modules.index');
 
 
-    Route::get('/admin-ues', function () {
+    Route::get('/ues/list', function () {
         return view('layouts.pages.ues.index');
     })->name('ues.index');
 
 
-    Route::get('/admin-faqs', function () {
+    Route::get('/faqs/list', function () {
         return view('layouts.pages.faqs.index');
     })->name('faqs.index');
 
 
-    Route::get('/admin-anounces', function () {
+    Route::get('/anounces/list', function () {
         return view('layouts.pages.anounces.index');
     })->name('anounces.index');
 
 
-    Route::get('/admin-events', function () {
+    Route::get('/events/list', function () {
         return view('layouts.pages.events.index');
     })->name('events.index');
 
-    Route::get('/admin-recentsnews', function () {
+    Route::get('/recentsnews/list', function () {
         return view('layouts.pages.recentsnews.index');
     })->name('recentsnews.index');
 
 
-    Route::get('/admin-galleries', function () {
+    Route::get('/galleries/list', function () {
         return view('layouts.pages.galleries.index');
     })->name('galleries.index');
 
 
-    Route::get('/admin-ues', function () {
+    Route::get('/ues/list', function () {
         return view('layouts.pages.ues.index');
     })->name('ues.index');
 });
-
-
-Route::get('/login', function () {
-    return view('layouts.pages.login');
-})->name('login');
 
 
 require __DIR__ . '/auth.php';

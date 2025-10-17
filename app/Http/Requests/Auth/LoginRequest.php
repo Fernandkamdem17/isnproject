@@ -32,7 +32,6 @@ class LoginRequest extends FormRequest
         ];
     }
 
-
     public function messages(): array
     {
         return [
@@ -42,7 +41,6 @@ class LoginRequest extends FormRequest
             'password.string'   => 'Le mot de passe doit être une chaîne de caractères.',
         ];
     }
-
 
     /**
      * Attempt to authenticate the request's credentials.
@@ -92,6 +90,6 @@ class LoginRequest extends FormRequest
      */
     public function throttleKey(): string
     {
-        return Str::transliterate(Str::lower($this->input('username')) . '|' . $this->ip());
+        return Str::transliterate(Str::lower($this->string('username')).'|'.$this->ip());
     }
 }

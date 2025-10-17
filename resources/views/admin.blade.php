@@ -39,7 +39,6 @@
     <!-- Template Stylesheet -->
     <link href="{{asset('assets/admin/css/style.css')}}" rel="stylesheet">
     <link href="{{asset('assets/admin/css/datatables-custom.css')}}" rel="stylesheet">
-
 </head>
 
 <body>
