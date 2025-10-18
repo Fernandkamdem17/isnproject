@@ -42,7 +42,7 @@
                         <div class="bg-secondary rounded h-100 px-4">
                             <div class="d-flex justify-content-between align-items-center mb-4">
                                 <h6 class="text-secondary mb-0">Ajouter une formation</h6>
-                                <a href="{{ route('admin.trainings.index') }}" class="btn btn-success rounded-pill d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;">
+                                <a href="{{ route('trainings.index') }}" class="btn btn-success rounded-pill d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;">
                                     <i class="fa fa-book text-light"></i>
                                 </a>
                             </div>

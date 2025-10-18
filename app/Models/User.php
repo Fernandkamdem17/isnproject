@@ -52,6 +52,60 @@ class User extends Authenticatable
         ];
     }
 
+
+    public function announces()
+    {
+        return $this->hasMany(Announce::class);
+    }
+
+    public function categories()
+    {
+        return $this->hasMany(Category::class);
+    }
+
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
+
+    public function faqs()
+    {
+        return $this->hasMany(Faq::class);
+    }
+
+    public function galleries()
+    {
+        return $this->hasMany(Gallery::class);
+    }
+
+    public function lessons()
+    {
+        return $this->hasMany(Lesson::class);
+    }
+
+    public function modules()
+    {
+        return $this->hasMany(Module::class);
+    }
+
+    public function recentsnews()
+    {
+        return $this->hasMany(Recentsnew::class);
+    }
+
+    public function testimonials()
+    {
+        return $this->hasMany(Testimonial::class);
+    }
+
+    public function trainings()
+    {
+        return $this->hasMany(Training::class);
+    }
+
+
+
+    //Génération unique du slug lors de la création
     private static function generateUniqueSlug($first_name)
     {
         return Str::slug($first_name) . '-' . uniqid();

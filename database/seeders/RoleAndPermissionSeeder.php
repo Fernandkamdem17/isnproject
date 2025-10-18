@@ -17,8 +17,8 @@ class RoleAndPermissionSeeder extends Seeder
 
         //Création des roles
         $superadmin = Role::firstOrCreate(['name' => 'superadmin']);
-        $director = Role::firstOrCreate(['name' => 'director']);
         $admin = Role::firstOrCreate(['name' => 'admin']);
+        $editor = Role::firstOrCreate(['name' => 'editor']);
 
         $permissions = [
             'manage_faqs',
@@ -44,7 +44,7 @@ class RoleAndPermissionSeeder extends Seeder
         //Attributions des permissions aus roles
         $superadmin->givePermissionTo(Permission::all());
 
-        $director->givePermissionTo(
+        $admin->givePermissionTo(
             [
                 'manage_faqs',
                 'manage_testimonials',
@@ -59,7 +59,7 @@ class RoleAndPermissionSeeder extends Seeder
         );
 
         
-        $admin->givePermissionTo(
+        $editor->givePermissionTo(
             [
                 'manage_faqs',
                 'manage_testimonials',

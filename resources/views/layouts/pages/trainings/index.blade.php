@@ -7,28 +7,33 @@
     <a href="{{route('admin.dashboard')}}" class="nav-item nav-link">
         <i class="fa fa-tachometer-alt me-2"></i> Tableau de Bord
     </a>
-    <a href="{{route('admin.trainings.index')}}" class="nav-item nav-link active">
-        <i class="fa fa-graduation-cap me-2"></i> Formations
+    @role('superadmin')
+        <a href="{{route('trainings.index')}}" class="nav-item nav-link active">
+            <i class="fa fa-graduation-cap me-2"></i> Formations
+        </a>
+        <a href="{{route('modules.index')}}" class="nav-item nav-link">
+            <i class="fa fa-book-open me-2"></i> Modules
+        </a>
+    @endrole
+    <a href="{{route('lessons.index')}}" class="nav-item nav-link">
+        <i class="fa fa-layer-group me-2"></i> UE
     </a>
-    <a href="{{route('admin.modules.index')}}" class="nav-item nav-link">
-        <i class="fa fa-book-open me-2"></i> Modules
-    </a>
-    <a href="{{route('admin.ues.index')}}" class="nav-item nav-link">
-        <i class="fa fa-layer-group me-2"></i> Unités d'enseignement
-    </a>
-    <a href="{{route('admin.recentsnews.index')}}" class="nav-item nav-link">
+    <a href="{{route('recentsnews.index')}}" class="nav-item nav-link">
         <i class="fa fa-newspaper me-2"></i> Infos récentes
     </a>
-    <a href="{{route('admin.faqs.index')}}" class="nav-item nav-link">
+    <a href="{{route('faqs.index')}}" class="nav-item nav-link">
         <i class="fa fa-question-circle me-2"></i> FAQs
     </a>
-    <a href="{{route('admin.anounces.index')}}" class="nav-item nav-link">
+    <a href="{{route('announces.index')}}" class="nav-item nav-link">
         <i class="fa fa-bullhorn me-2"></i> Annonces
     </a>
-    <a href="{{route('admin.events.index')}}" class="nav-item nav-link">
+    <a href="{{route('testimonials.index')}}" class="nav-item nav-link">
+        <i class="fa fa-bullhorn me-2"></i> Témoignages
+    </a>
+    <a href="{{route('events.index')}}" class="nav-item nav-link">
         <i class="fa fa-calendar-alt me-2"></i> Évènements
     </a>
-    <a href="{{route('admin.galleries.index')}}" class="nav-item nav-link">
+    <a href="{{route('galleries.index')}}" class="nav-item nav-link">
         <i class="fa fa-images me-2"></i> Galerie
     </a>
 @endsection
@@ -39,7 +44,7 @@
             <div class="bg-secondary rounded h-100 p-4">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h6 class="text-secondary mb-0">Liste des formations</h6>
-                    <a href="{{ route('admin.trainings.create') }}" class="btn btn-success rounded-pill d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;">
+                    <a href="{{ route('trainings.create') }}" class="btn btn-success rounded-pill d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;">
                         <i class="fa fa-plus text-light"></i>
                     </a>
 

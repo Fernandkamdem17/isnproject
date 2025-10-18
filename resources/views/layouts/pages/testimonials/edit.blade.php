@@ -4,7 +4,6 @@
     Edit Training
 @endsection
 @section('content-sidebar')
-    <a href="{{route('admin.dashboard')}}" class="nav-item nav-link ">
                         <i class="fa fa-tachometer-alt me-2"></i> Tableau de Bord
                     </a>
                     <a href="{{route('admin.trainings')}}" class="nav-item nav-link active">
@@ -25,6 +24,7 @@
                     <a href="#" class="nav-item nav-link">
                         <i class="fa fa-bullhorn me-2"></i> Annonces
                     </a>
+                    
                     <a href="#" class="nav-item nav-link">
                         <i class="fa fa-calendar-alt me-2"></i> Évènements
                     </a>

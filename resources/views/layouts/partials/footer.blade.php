@@ -1,6 +1,6 @@
 <!-- Buttons flottants à gauche -->
 <div class="floating-buttons">
-    <a href="{{route('actualites')}}" class="btn-floating btn-news" title="Actualités">
+    <a href="{{route('web.actualites')}}" class="btn-floating btn-news" title="Actualités">
         <i class="fas fa-newspaper"></i>
     </a>
     <a href="#" target="_blank" class="btn-floating btn-whatsapp" title="WhatsApp">

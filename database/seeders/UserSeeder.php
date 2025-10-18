@@ -14,27 +14,28 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $superadmin = User::firstOrCreate(
-            ['email' => 'superadmin@example.com'],
+            ['email' => 'fernand@superadmin.com'],
             [
                 'first_name' => 'Super',
                 'last_name' => 'Admin',
-                'username' => 'superadmin',
-                'password' => 'password',
+                'username' => 'fernand',
+                'password' => 'Kpfer_isnp_2@@517',
             ]
         );
 
         $superadmin->assignRole('superadmin');
 
-        $director = User::firstOrCreate(
-            ['email' => 'director@example.com'],
+
+        $admin = User::firstOrCreate(
+            ['email' => 'admin@example.com'],
             [
                 'first_name' => 'John',
                 'last_name' => 'Doe',
-                'username' => 'director',
+                'username' => 'admin',
                 'password' => 'password123',
             ]
         );
 
-        $director->assignRole('director');
+        $admin->assignRole('admin');
     }
 }
