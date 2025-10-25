@@ -66,67 +66,35 @@
 
     <div class="container">
         <div class="accordion faq-accordion" id="accordionExample">
-            <!-- Question 1 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" 
-                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Quels sont les prérequis pour suivre une formation en numérique ?
-                </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    Nos formations numériques sont accessibles à tous. Toutefois, une maîtrise de base en informatique est recommandée. Selon le parcours choisi (développement web, bureautique, design, etc.), un test de positionnement pourra être proposé.
-                </div>
-                </div>
-            </div>
-
-            <!-- Question 2 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Les formations paramédicales sont-elles reconnues ?
-                </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    Oui, nos formations paramédicales sont encadrées par des professionnels du secteur et conformes aux normes en vigueur. À l’issue, vous recevez une attestation de formation validant vos compétences.
-                </div>
-                </div>
-            </div>
-
-            <!-- Question 3 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Proposez-vous des cours de langues adaptés aux débutants ?
-                </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    Bien sûr ! Nos cours de langues (anglais, français, espagnol, allemand, etc.) sont organisés par niveaux : débutant, intermédiaire et avancé. Un test de niveau gratuit est disponible avant inscription.
-                </div>
-                </div>
-            </div>
-
-            <!-- Question 4 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFour">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    Quelles sont les modalités de paiement ?
-                </button>
-                </h2>
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    Nous proposons un paiement flexible : comptant, en plusieurs tranches ou via financement par nos partenaires. Contactez notre service administratif pour plus d’informations.
-                </div>
-                </div>
-            </div>
+            @if($faqs && $faqs->count() > 0)
+                @foreach ($faqs as $index => $faq)
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading{{ $index }}">
+                            <button class="accordion-button {{ $index !== 0 ? 'collapsed' : '' }}" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse{{ $index }}" 
+                                    aria-expanded="{{ $index === 0 ? 'true' : 'false' }}" 
+                                    aria-controls="collapse{{ $index }}">
+                                {{ $faq->title }}
+                            </button>
+                        </h2>
+                        <div id="collapse{{ $index }}" 
+                            class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}" 
+                            aria-labelledby="heading{{ $index }}" 
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                {{ $faq->description }}
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            @else
+                <p class="text-center text-muted py-4">Aucune question disponible pour le moment.</p>
+            @endif
         </div>
     </div>
+
 
     <!-- Testimonial Start -->
     @include('layouts.pages.testimonial')

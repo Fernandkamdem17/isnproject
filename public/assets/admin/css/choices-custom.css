@@ -1,0 +1,21 @@
+/* Style pour les groupes */
+.choices__list--dropdown .choices__group {
+    font-weight: bold;
+    font-size: 14px; /* Augmente la taille du texte */
+    /* color: #FFA500;  Couleur dorée */
+    text-transform: uppercase;
+    padding: 5px 10px;
+    background-color: #222; /* fond plus visible */
+}
+
+/* Style pour les options */
+.choices__list--dropdown .choices__item--selectable {
+    color: #ffffff;
+    background-color: #181d38;
+    padding: 8px 10px;
+}
+
+.choices__list--dropdown .choices__item--selectable:hover {
+    /* background-color: #FFA500; */
+    color: #000;
+}

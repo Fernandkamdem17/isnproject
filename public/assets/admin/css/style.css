@@ -54,6 +54,11 @@ button[type="submit"]:focus{
     outline: none !important;
 }
 
+/* button[type="submit", class="form-button"]:focus{
+    box-shadow: none !important;
+    outline: none !important;
+} */
+
 
 .form-check-input:focus {
     border-color: var(--orange) !important;

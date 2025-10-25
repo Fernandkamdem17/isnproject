@@ -3,10 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
 class Module extends Model
 {
+    use  SoftDeletes;
 
     protected $fillable = [
         'user_id',
@@ -24,6 +26,12 @@ class Module extends Model
     {
         return $this->belongsTo(Training::class);
     }
+
+    public function lessons()
+    {
+        return $this->hasMany(Lesson::class);
+    }
+
 
 
     //Génération unique du slug lors de la création

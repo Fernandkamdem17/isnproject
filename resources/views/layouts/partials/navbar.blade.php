@@ -3,13 +3,13 @@
         <div class="container-fluid">
             <div class="marquee-wrapper overflow-hidden position-relative">
                 <div class="marquee d-flex">
-                    <span class="me-5">📢 Inscriptions ouvertes pour la session de Juin 2025 !</span>
-                    <span class="me-5">🎓 Nouvelle formation CQP Numérique disponible.</span>
-                    <span class="me-5">📅 Conférence sur le paramédical le 30 Septembre 2025.</span>
-                    <span class="me-5">💡 Offres spéciales sur les cours de langues jusqu'à fin Octobre !</span>
+                    @if ($recentsnews!=null && count($recentsnews)>0)
+                        @foreach ($recentsnews as $recentsnew)
+                            <span class="me-5">{{$recentsnew->title}}</span>
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>
     </div>
-
     @yield('navbar')

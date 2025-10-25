@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 class Category extends Model
 {
 
-    
+
     protected $fillable = [
         'user_id',
         'title',
@@ -19,6 +19,11 @@ class Category extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function trainings()
+    {
+        return $this->hasMany(Training::class);
     }
 
 

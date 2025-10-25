@@ -3,10 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
 class Training extends Model
 {
+
+    use  SoftDeletes;
 
     protected $fillable = [
         'user_id',
@@ -23,7 +26,12 @@ class Training extends Model
 
     public function category()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Category::class);
+    }
+
+    public function modules()
+    {
+        return $this->hasMany(Module::class);
     }
 
 

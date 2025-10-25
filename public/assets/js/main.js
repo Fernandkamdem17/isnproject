@@ -80,7 +80,6 @@
         return false;
     });
 
-
     // Header carousel
     $(".header-carousel").owlCarousel({
         autoplay: true,
