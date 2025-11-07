@@ -246,6 +246,25 @@
   font-weight: 600;
 }
 
+
+/***Training Detail***/
+.training-detail .title{
+  background-color:var(--dark); 
+  margin-top: 30px;
+}
+.training-detail .title b{
+  text-transform: uppercase;
+}
+
+.training-detail .title .icon{
+   font-size:50px;
+   margin: 0;
+}
+
+.training-detail .title .icon i, .training-detail .title .icon-1 i{
+   color: var(--primary);
+}
+
 /***Events***/
 .events .pulsating-play-btn {
   position: absolute;
@@ -339,11 +358,6 @@
     height: 30px;
 }
 
-.marquee {
-    display: inline-block;
-    white-space: nowrap;
-    animation: marquee 20s linear infinite;
-}
 
 .marquee span {
     display: inline-block;
@@ -359,11 +373,31 @@
 }
 
 
-
-@keyframes marquee {
-    0% { transform: translateX(50%); }
-    100% { transform: translateX(-50%); }
+.marquee-wrapper {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
 }
+
+.marquee {
+    display: inline-block;
+    animation: slide-left 18s linear infinite;
+}
+
+@keyframes slide-left {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Pause au survol (optionnel mais recommandé) */
+.marquee:hover {
+    animation-play-state: paused;
+}
+
 
 
 .navbar .dropdown-toggle::after {

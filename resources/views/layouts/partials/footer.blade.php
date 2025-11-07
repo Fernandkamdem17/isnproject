@@ -6,9 +6,6 @@
     <a href="#" target="_blank" class="btn-floating btn-whatsapp" title="WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
-    {{-- <a href="#" class="btn-floating btn-translate" title="Traduction">
-        <i class="fas fa-language"></i>
-    </a> --}}
     <div class="btn-group dropup floating-translate">
     <button type="button" class="btn btn-secondary dropdown-toggle btn-floating" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="fas fa-language"></i>
@@ -82,11 +79,11 @@
             <!-- Liens rapides -->
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-3">Liens rapides</h4>
-                <a class="btn btn-link" href="#">Accueil</a>
-                <a class="btn btn-link" href="#">À propos de nous</a>
-                <a class="btn btn-link" href="#">Actualités</a>
-                <a class="btn btn-link" href="#">Contact</a>
-                <a class="btn btn-link" href="#">FAQs</a>
+                <a class="btn btn-link" href="{{route('web.home')}}">Accueil</a>
+                <a class="btn btn-link" href="{{route('web.about')}}">À propos de nous</a>
+                <a class="btn btn-link" href="{{route('web.actualites')}}">Actualités</a>
+                <a class="btn btn-link" href="{{route('web.contact')}}">Contact</a>
+                <a class="btn btn-link" href="{{route('web.faqs')}}">FAQs</a>
             </div>
 
             <!-- Nos Campus -->
@@ -104,11 +101,11 @@
                 <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>(+237) 697 128 923</p>
                 <p class="mb-2"><i class="fa fa-envelope me-3"></i>isnbafoussam@gmail.com</p>
                 <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-tiktok"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="javascript:;"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/institutsuperieurdunumerique" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://www.tiktok.com/@isnbafoussam" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="javascript:;"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://wa.me/659717141" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
 
@@ -121,13 +118,14 @@
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                     &copy; ISNP-Bafoussam, Tous droits réservés.
-                    Développé par <a class="border-bottom" href="#">FK & Houchi Startup</a>
+                    Développé par <a class="border-bottom" href="javascript:;">Fernand Kamdem</a>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <div class="footer-menu">
-                        <a href="#">Inscription</a>
-                        <a href="#">Contact</a>
-                        <a href="#">FAQs</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf7VphuUBwHUXSuiVmsq1lfxZT9La0cxULh2ZeIXwpJ82Dn7w/viewform"
+          target="_blank">Inscription</a>
+                        <a href="{{route('web.contact')}}">Contact</a>
+                        <a href="{{route('web.faqs')}}">FAQs</a>
                     </div>
                 </div>
             </div>

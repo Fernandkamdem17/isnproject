@@ -1,7 +1,7 @@
 
 @extends('admin')
 @section('title')
-    Edit Announce
+    Add Announce
 @endsection
 
 
@@ -13,16 +13,15 @@
                 <div class="bg-secondary rounded h-100 p-4">
                         <div class="bg-secondary rounded h-100 px-4">
                             <div class="d-flex justify-content-between align-items-center mb-4">
-                                <h6 class="text-secondary mb-0">Modifier une annonce</h6>
+                                <h6 class="text-secondary mb-0">Ajouter une annonce</h6>
                                 <a href="{{ route('announces.index') }}" class="btn btn-success rounded-pill d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;">
                                     <i class="fa fa-book text-light"></i>
                                 </a>
                             </div>
                         </div>
                         <hr>
-                        <form action="{{route('announces.update', $announce)}}" method="POST" class="px-4 py-2" enctype="multipart/form-data">
+                        <form action="{{route('announces.store')}}" method="POST" class="px-4 py-2" enctype="multipart/form-data">
                             @csrf
-                            @method('PUT')
                             <div class="mb-3">
                                 <label for="title">Titre</label>
                                 <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="title"  value="{{old('title', $announce->title?? '')}}">
@@ -41,24 +40,14 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="img" class="form-label">Modifier l'image</label>
-
-                                <div>
-                                    @if(!empty($announce->img))
-                                        <img src="{{ asset('storage/' . $announce->img) }}" 
-                                            alt="Image actuelle" 
-                                            data-featherlight="{{ asset('storage/' . $announce->img) }}"
-                                            style="height: 80px; border-radius: 6px; object-fit: cover; cursor:pointer">
-                                    @endif
-                                        <input type="file" class="form-control mt-3 @error('img') is-invalid @enderror" value="{{ old('img', $announce->img ?? '') }}" name="img" id="img" />
-                                </div>
-
+                                <label for="img" class="form-label">Ajouter une image</label>
+                                <input type="file" class="form-control @error('img') is-invalid @enderror" value="{{ old('img', $announce->img ?? '') }}" name="img" id="img" />
                                 @error('img')
                                     <small class="invalid-feedback d-block">{{ $message }}</small>
                                 @enderror
                             </div>
 
-                             <button type="submit" class="btn btn-success">Modifier</button>
+                             <button type="submit" class="btn btn-success">Ajouter</button>
                         </form>
                     </div>
                 </div>

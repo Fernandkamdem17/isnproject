@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Lesson;
+use App\Models\Training;
 use Illuminate\Http\Request;
 
 class LessonController extends Controller
@@ -11,7 +13,8 @@ class LessonController extends Controller
      */
     public function index()
     {
-        return view('layouts.pages.lessons.index');
+        $lessons = Lesson::withTrashed()->get();
+        return view('layouts.pages.lessons.index', compact('lessons'));
     }
 
     /**

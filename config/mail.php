@@ -37,6 +37,24 @@ return [
 
     'mailers' => [
 
+        'gmail' => [ // <-- Nouveau mailer dédié
+            'transport' => 'smtp',
+            // Le host de Gmail
+            'host' => 'smtp.gmail.com',
+            // Le port standard TLS/STARTTLS de Gmail
+            'port' => 587,
+            // L'utilisation de 'tls' est souvent requise pour le port 587
+            'encryption' => 'tls',
+
+            // Utilisation des variables d'environnement spécifiques pour Gmail
+            // Assurez-vous d'utiliser le MOT DE PASSE D'APPLICATION ici
+            'username' => env('GMAIL_USERNAME'),
+            'password' => env('GMAIL_PASSWORD'),
+
+            'timeout' => null,
+            'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url((string) env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
+        ],
+
         'smtp' => [
             'transport' => 'smtp',
             'scheme' => env('MAIL_SCHEME'),
@@ -48,6 +66,8 @@ return [
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN', parse_url((string) env('APP_URL', 'http://localhost'), PHP_URL_HOST)),
         ],
+
+
 
         'ses' => [
             'transport' => 'ses',
@@ -112,7 +132,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'name' => env('MAIL_FROM_NAME', 'Institut Supérieur du Numérique'),
     ],
 
 ];

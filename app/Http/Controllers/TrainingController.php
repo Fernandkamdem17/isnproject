@@ -20,6 +20,7 @@ class TrainingController extends Controller
         return view('layouts.pages.trainings.index', compact('trainings'));
     }
 
+
     /**
      * Show the form for creating a new resource.
      */
@@ -78,11 +79,10 @@ class TrainingController extends Controller
             $messages
         );
 
-        $cleanTitle = preg_replace('/[\x{10000}-\x{10FFFF}]/u', '', $validated['formation_titled']);
-
+        $cleanTitle = strip_tags(preg_replace('/[\x{10000}-\x{10FFFF}]/u', '', $validated['formation_titled']));
         $imgPath = null;
         if ($request->hasFile('img')) {
-            $imgPath = $request->file('img')->store('products', 'public');
+            $imgPath = $request->file('img')->store('trainings', 'public');
         }
 
         Training::create([
@@ -175,7 +175,7 @@ class TrainingController extends Controller
             }
 
             // Stocker la nouvelle image
-            $imgPath = $request->file('img')->store('products', 'public');
+            $imgPath = $request->file('img')->store('trainings', 'public');
         } else {
             // Garder l’ancienne image
             $imgPath = $training->img;

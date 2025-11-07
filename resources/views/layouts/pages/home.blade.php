@@ -4,58 +4,8 @@
     Accueil - ISN-Bafoussam
 @endsection
 
-@section('navbar')
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="{{route('web.home')}}" class="navbar-brand logo d-flex align-items-center px-4 px-lg-5">
-            <img class="d-flex flex-column align-items-center justify-content-center" src="{{asset('web.assets/img/logo.png')}}" alt="">
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{{route('web.home')}}" class="nav-item nav-link active">Accueil</a>
-                <a href="{{route('web.about')}}" class="nav-item nav-link">Présentation</a>
-                <div class="nav-item dropdown">
-                    <a href="{{ route('web.formations') }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Formations</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <!-- Section Numérique -->
-                        <h6 class="dropdown-header">Numérique</h6>
-                        <a href="#" class="dropdown-item">Développement Web</a>
-                        <a href="#" class="dropdown-item">Cybersécurité</a>
-                        <a href="#" class="dropdown-item">Data Science</a>
-
-                        <div class="dropdown-divider"></div>
-
-                        <!-- Section Paramédical -->
-                        <h6 class="dropdown-header">Paramédical</h6>
-                        <a href="#" class="dropdown-item">Infirmier</a>
-                        <a href="#" class="dropdown-item">Aide-soignant</a>
-                        <a href="#" class="dropdown-item">Pharmacie</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="{{ route('web.formations') }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Langues</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="#" class="dropdown-item">Anglais</a>
-                        <a href="#" class="dropdown-item">Allemand</a>
-                        <a href="#" class="dropdown-item">Italien</a>
-                        <a href="#" class="dropdown-item">Espagnol</a>
-                    </div>
-                </div>
-                <a href="{{route('web.faqs')}}" class="nav-item nav-link">FAQs</a>
-                <a href="{{route('web.actualites')}}" class="nav-item nav-link">Actualités</a>
-                <a href="{{route('web.contact')}}" class="nav-item nav-link">Contact</a>
-            </div>
-            <a href="{{route('login')}}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Connexion<i class="fa fa-arrow-right ms-3"></i></a>
-        </div>
-    </nav>
-@endsection
-
-
-
 @section('content')
-
+    
     <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5">
         <div class="owl-carousel header-carousel position-relative">
@@ -68,8 +18,8 @@
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Formations Numériques</h5>
                                 <h1 class="display-3 text-white animated slideInDown">Devenez Expert en Métiers du Digital</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Boostez votre carrière dans le numérique avec des certifications reconnues.</p>
-                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">En savoir plus</a>
-                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">S’inscrire</a>
+                                <a href="#numerique" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">En savoir plus</a>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf7VphuUBwHUXSuiVmsq1lfxZT9La0cxULh2ZeIXwpJ82Dn7w/viewform" target="_blank" class="btn btn-light py-md-3 px-md-5 animated slideInRight">S’inscrire</a>
                             </div>
                         </div>
                     </div>
@@ -84,8 +34,8 @@
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Formations Paramédicales</h5>
                                 <h1 class="display-3 text-white animated slideInDown">Préparez votre Carrière en Santé</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Préparez-vous aux métiers de la santé avec des certifications professionnelles.</p>
-                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Découvrir</a>
-                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">S’inscrire</a>
+                                <a href="#paramedical" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Découvrir</a>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf7VphuUBwHUXSuiVmsq1lfxZT9La0cxULh2ZeIXwpJ82Dn7w/viewform" target="_blank" class="btn btn-light py-md-3 px-md-5 animated slideInRight">S’inscrire</a>
                             </div>
                         </div>
                     </div>
@@ -102,8 +52,8 @@
                             <p class="fs-5 text-white mb-4 pb-2">
                                 Maîtrisez les langues et ouvrez de nouvelles opportunités.
                             </p>
-                            <a href="#" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Découvrir</a>
-                            <a href="#" class="btn btn-light py-md-3 px-md-5 animated slideInRight">S’inscrire</a>
+                            <a href="#langue" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Découvrir</a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf7VphuUBwHUXSuiVmsq1lfxZT9La0cxULh2ZeIXwpJ82Dn7w/viewform" target="_blank" class="btn btn-light py-md-3 px-md-5 animated slideInRight">S’inscrire</a>
                         </div>
                     </div>
                 </div>
@@ -196,7 +146,7 @@
                         </div>
                     </div>
 
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="">En savoir plus</a>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="{{route('web.about')}}">En savoir plus</a>
                 </div>
 
             </div>
@@ -219,7 +169,7 @@
                         <img class="img-fluid w-100" src="{{asset('assets/img/3.jpg')}}" alt="Formation Numérique" style="height: 250px; object-fit: cover;">
                         <div class="bg-white text-center position-absolute bottom-0 w-100 py-3">
                             <h5 class="m-0">Informatique & Numérique</h5>
-                            <small class="text-primary">11 Spécialités</small>
+                            <small class="text-primary">{{$numerique}}&nbsp;&nbsp;Spécialités</small>
                         </div>
                     </a>
                 </div>
@@ -230,7 +180,7 @@
                         <img class="img-fluid w-100" src="{{asset('assets/img/3.jpg')}}" alt="Formation Paramédical" style="height: 250px; object-fit: cover;">
                         <div class="bg-white text-center position-absolute bottom-0 w-100 py-3">
                             <h5 class="m-0">Paramédical</h5>
-                            <small class="text-primary">15 Spécialités</small>
+                            <small class="text-primary">{{$paramedical}}&nbsp;&nbsp;Spécialités</small>
                         </div>
                     </a>
                 </div>
@@ -241,7 +191,7 @@
                         <img class="img-fluid w-100" src="{{asset('assets/img/3.jpg')}}" alt="Cours de Langues" style="height: 250px; object-fit: cover;">
                         <div class="bg-white text-center position-absolute bottom-0 w-100 py-3">
                             <h5 class="m-0">Cours de Langues</h5>
-                            <small class="text-primary">5 Langues Étrangères</small>
+                            <small class="text-primary">{{$langue}}&nbsp;&nbsp;Spécialités</small>
                         </div>
                     </a>
                 </div>
@@ -253,7 +203,7 @@
 
 
     {{-- numerique start --}}
-    <div class="container-xxl pb-5">
+    <div class="container-xxl pb-5" id="numerique">
             <div class="container">
                 <div class="row pb-5">
                     <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
@@ -265,123 +215,27 @@
 
             <div class="container">
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-1.jpg')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-2.jpg')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-3.jpg')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-
-                    
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-4.jpg')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-5.jpg')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-6.jpg')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-
-                    
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-7.jpg')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-13.png')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-14.png')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-
-
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-15.png')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-16.png')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-
+                        @if ($trainings!=null && count($trainings)>0)
+                            @php $delays = [0.1, 0.2, 0.3]; $i = 0; @endphp
+                            @foreach ($trainings as $training)
+                                @if ($training->category->title=='numérique')
+                                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="{{ $delays[$i] }}s">
+                                        <a class="position-relative d-block overflow-hidden" href="">
+                                            <img class="img-fluid w-100" src="{{ asset('storage/' . $training->img) }}" alt="{{$training->title}}" >
+                                            <div class="text-center my-2">
+                                                <a href="{{route('web.training.details', ['training'=>Str::slug($training->slug)])}}" class="btn btn-primary text-white w-50">
+                                                    <i class="fas fa-info-circle"></i> Plus d'infos
+                                                </a>
+                                            </div>
+                                        </a>
+                                    </div>
+                                @endif
+                                @php
+                                    $i++;
+                                    if ($i >= count($delays)) $i = 0;
+                                @endphp
+                            @endforeach
+                        @endif;
                 </div>
             </div>
     </div>
@@ -389,7 +243,7 @@
 
 
     {{-- paramédical start --}}
-    <div class="container-xxl pb-5">
+    <div class="container-xxl pb-5" id="paramedical">
             <div class="container">
                 <div class="row pb-5">
                     <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
@@ -401,101 +255,27 @@
 
             <div class="container">
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-1.jpg')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-2.jpg')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-3.jpg')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-
-                    
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-4.jpg')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-5.jpg')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-6.jpg')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-
-                    
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-7.jpg')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-13.png')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-14.png')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-
+                    @if ($trainings!=null && count($trainings)>0)
+                        @php $delays = [0.1, 0.2, 0.3]; $i = 0; @endphp
+                            @foreach ($trainings as $training)
+                                @if ($training->category->title=='paramédicale')
+                                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="{{ $delays[$i] }}s">
+                                        <a class="position-relative d-block overflow-hidden" href="">
+                                            <img class="img-fluid w-100" src="{{ asset('storage/' . $training->img) }}" alt="{{$training->title}}" >
+                                            <div class="text-center my-2">
+                                                <a href="{{route('web.training.details', ['training'=>Str::slug($training->slug)])}}" class="btn btn-primary text-white w-50">
+                                                    <i class="fas fa-info-circle"></i> Plus d'infos
+                                                </a>
+                                            </div>
+                                        </a>
+                                    </div>
+                                @endif
+                                @php
+                                    $i++;
+                                    if ($i >= count($delays)) $i = 0;
+                                @endphp
+                            @endforeach
+                    @endif;
                 </div>
             </div>
     </div>
@@ -503,7 +283,7 @@
 
 
     {{-- langue start --}}
-    <div class="container-xxl pb-5">
+    <div class="container-xxl pb-5" id="langue">
             <div class="container">
                 <div class="row pb-5">
                     <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
@@ -515,36 +295,22 @@
 
             <div class="container">
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-10.jpg')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-11.jpg')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid w-100" src="{{asset('assets/img/formations/f-12.jpg')}}" alt="Formation Numérique" >
-                            <div class="text-center my-2">
-                                <a href="index.php?view=dev&formation=Sécrétariat de Direction" class="btn btn-primary text-white w-50">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </a>
-                    </div>
+                    @if ($trainings!=null && count($trainings)>0)
+                            @foreach ($trainings as $training)
+                                @if ($training->category->title=='langue')
+                                    <div class="col-lg-3 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                                        <a class="position-relative d-block overflow-hidden" href="">
+                                            <img class="img-fluid w-100" src="{{ asset('storage/' . $training->img) }}" alt="{{$training->title}}" >
+                                            <div class="text-center my-2">
+                                                <a href="{{route('web.training.details', ['training'=>Str::slug($training->slug)])}}" class="btn btn-primary btn-sm text-white w-50">
+                                                    <i class="fas fa-info-circle"></i> Plus d'infos
+                                                </a>
+                                            </div>
+                                        </a>
+                                    </div>
+                                @endif
+                            @endforeach
+                    @endif;
                 </div>
             </div>
     </div>

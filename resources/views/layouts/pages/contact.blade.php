@@ -4,59 +4,24 @@
     Contact - ISN-Bafoussam
 @endsection
 
-@section('navbar')
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="{{route('web.home')}}" class="navbar-brand logo d-flex align-items-center px-4 px-lg-5">
-            <img class="d-flex flex-column align-items-center justify-content-center" src="{{asset('assets/img/logo.png')}}" alt="">
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{{route('web.home')}}" class="nav-item nav-link">Accueil</a>
-                <a href="{{route('web.about')}}" class="nav-item nav-link">Présentation</a>
-                <div class="nav-item dropdown">
-                    <a href="{{ route('web.formations') }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Formations</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <!-- Section Numérique -->
-                        <h6 class="dropdown-header">Numérique</h6>
-                        <a href="#" class="dropdown-item">Développement Web</a>
-                        <a href="#" class="dropdown-item">Cybersécurité</a>
-                        <a href="#" class="dropdown-item">Data Science</a>
-
-                        <div class="dropdown-divider"></div>
-
-                        <!-- Section Paramédical -->
-                        <h6 class="dropdown-header">Paramédical</h6>
-                        <a href="#" class="dropdown-item">Infirmier</a>
-                        <a href="#" class="dropdown-item">Aide-soignant</a>
-                        <a href="#" class="dropdown-item">Pharmacie</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="{{ route('web.formations') }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Langues</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="#" class="dropdown-item">Anglais</a>
-                        <a href="#" class="dropdown-item">Allemand</a>
-                        <a href="#" class="dropdown-item">Italien</a>
-                        <a href="#" class="dropdown-item">Espagnol</a>
-                    </div>
-                </div>
-                <a href="{{route('web.faqs')}}" class="nav-item nav-link">FAQs</a>
-                <a href="{{route('web.actualites')}}" class="nav-item nav-link">Actualités</a>
-                <a href="{{route('web.contact')}}" class="nav-item nav-link active">Contact</a>
-            </div>
-            <a href="{{route('login')}}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Connexion<i class="fa fa-arrow-right ms-3"></i></a>
-        </div>
-    </nav>
-@endsection
 
 @section('content')
 
 <!-- Contact Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
+            @if(session('success-send'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success-send') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            @error('email_send_failure')
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ $message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @enderror
             <div class="text-center">
                 <h6 class="section-title bg-white text-center text-primary px-3">Contactez-Nous</h6>
                 <h1 class="mb-5">Votre avis compte</h1>
@@ -69,30 +34,51 @@
             </div><!-- End Google Maps -->
             <div class="row gy-4">
                 <div class="col-lg-8">
-                    <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-                    <div class="row gy-4">
+                    <form action="{{route('web.contact.send')}}" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                        @csrf
+                        <div class="row gy-4">
 
-                        <div class="col-md-6">
-                        <input type="text" name="name" class="form-control" placeholder="Votre Nom" required="">
+                            <div class="col-md-6">
+                                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{old('name')}}" placeholder="Votre Nom">
+                                @error('name')
+                                    <small class="invalid-feedback d-block">
+                                        {{$message}}
+                                    </small>
+                                @enderror
+                            </div>
+
+                            <div class="col-md-6 ">
+                                <input type="text" name="email" class="form-control @error('email') is-invalid @enderror" value="{{old('email')}}" placeholder="Votre Email">
+                                @error('email')
+                                    <small class="invalid-feedback d-block">
+                                        {{$message}}
+                                    </small>
+                                @enderror
+                            </div>
+
+                            <div class="col-md-12">
+                                <input type="text" name="subject" class="form-control @error('subject') is-invalid @enderror" value="{{old('subject')}}"  placeholder="Sujet">
+                                @error('subject')
+                                    <small class="invalid-feedback d-block">
+                                        {{$message}}
+                                    </small>
+                                @enderror
+                            </div>
+
+                            <div class="col-md-12">
+                                <textarea  name="message" class="form-control @error('message') is-invalid @enderror" rows="6" placeholder="Message">{{old('message')}}</textarea>
+                                @error('message')
+                                    <small class="invalid-feedback d-block">
+                                        {{$message}}
+                                    </small>
+                                @enderror
+                            </div>
+
+                            <div class="col-md-12 text-center">
+                                <button type="submit">Send Message</button>
+                            </div>
+
                         </div>
-
-                        <div class="col-md-6 ">
-                        <input type="email" class="form-control" name="email" placeholder="Votre Email" required="">
-                        </div>
-
-                        <div class="col-md-12">
-                        <input type="text" class="form-control" name="subject" placeholder="Sujet" required="">
-                        </div>
-
-                        <div class="col-md-12">
-                        <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                        </div>
-
-                        <div class="col-md-12 text-center">
-                            <button type="submit">Send Message</button>
-                        </div>
-
-                    </div>
                     </form>
                 </div><!-- End Contact Form -->
 

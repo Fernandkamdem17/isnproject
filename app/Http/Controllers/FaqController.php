@@ -62,9 +62,8 @@ class FaqController extends Controller
             ],
             $messages
         );
-        $cleanQuestion = preg_replace('/[\x{10000}-\x{10FFFF}]/u', '', $validated['question']);
-        $cleanResponse = preg_replace('/[\x{10000}-\x{10FFFF}]/u', '', $validated['response']);
-
+        $cleanQuestion = strip_tags(preg_replace('/[\x{10000}-\x{10FFFF}]/u', '', $validated['question']));
+        $cleanResponse = strip_tags(preg_replace('/[\x{10000}-\x{10FFFF}]/u', '', $validated['response']));
         Faq::create([
             'user_id' => Auth::id(),
             'title' => $cleanQuestion,

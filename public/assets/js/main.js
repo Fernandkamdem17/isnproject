@@ -183,8 +183,8 @@ function showWelcomeMessage() {
     chatbox.scrollTop = chatbox.scrollHeight;
 
     const container = document.getElementById('input-area');
-const route = container.dataset.route;
-const token = container.dataset.token;
+    const route = container.dataset.route;
+    const token = container.dataset.token;
 
 fetch(route, {
     method: "POST",

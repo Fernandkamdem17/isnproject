@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AnnounceController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChatbotController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\GalleryController;
@@ -38,9 +39,12 @@ Route::name('web.')->group(function () {
     Route::get('/', [WebPageController::class, 'home'])->name('home');
     Route::get('/presentation', [WebPageController::class, 'presentation'])->name('about');
     Route::get('/formations', [WebPageController::class, 'formations'])->name('formations');
+    Route::get('/langues', [WebPageController::class, 'langues'])->name('langues');
     Route::get('/actualites', [WebPageController::class, 'actualites'])->name('actualites');
     Route::get('/contact', [WebPageController::class, 'contact'])->name('contact');
+    Route::post('/contact', [ContactController::class, 'SendMessage'])->name('contact.send');
     Route::get('/aide/faqs', [WebPageController::class, 'faqs'])->name('faqs');
+    Route::get('/{training}/details', [WebPageController::class, 'trainingDetail'])->name('training.details');
 });
 
 

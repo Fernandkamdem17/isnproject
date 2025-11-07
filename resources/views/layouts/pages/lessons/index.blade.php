@@ -1,19 +1,21 @@
-
+{{-- 
 @extends('admin')
 @section('title')
-    Lessons
+    lessons
 @endsection
 @section('content-sidebar')
     <a href="{{route('admin.dashboard')}}" class="nav-item nav-link">
         <i class="fa fa-tachometer-alt me-2"></i> Tableau de Bord
     </a>
-    <a href="{{route('trainings.index')}}" class="nav-item nav-link">
-        <i class="fa fa-graduation-cap me-2"></i> Formations
-    </a>
-    <a href="{{route('modules.index')}}" class="nav-item nav-link">
-        <i class="fa fa-book-open me-2"></i> Modules
-    </a>
-    <a href="{{route('lessons.index')}}" class="nav-item nav-link active">
+    @role('superadmin')
+        <a href="{{route('trainings.index')}}" class="nav-item nav-link">
+            <i class="fa fa-graduation-cap me-2"></i> Formations
+        </a>
+        <a href="{{route('modules.index')}}" class="nav-item nav-link active">
+            <i class="fa fa-book-open me-2"></i> Modules
+        </a>
+    @endrole
+    <a href="{{route('lessons.index')}}" class="nav-item nav-link">
         <i class="fa fa-layer-group me-2"></i> UE
     </a>
     <a href="{{route('recentsnews.index')}}" class="nav-item nav-link">
@@ -37,5 +39,78 @@
 @endsection
 
 @section('main')
+    <div class="container-fluid pt-4 px-4">
+        <div class="col-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                @if(session('success-update'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success-update') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+                @if(session('success-create'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success-create') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+                @if(session('success-delete'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success-delete') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h6 class="text-secondary mb-0">Liste des lessons</h6>
+                    <a href="{{ route('lessons.create') }}" class="btn btn-success rounded-pill d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;">
+                        <i class="fa fa-plus text-light"></i>
+                    </a>
 
-@endsection
+                </div>
+                <div class="table-responsive">
+                    <table id="datatablesSimple" class="table">
+                        <thead>
+                            <tr >
+                                <th scope="col">#</th>
+                                <th scope="col">Intutule</th>
+                                <th scope="col">Formation</th>
+                                <th scope="col" class="text-center align-middle">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if ($lessons!=null && count($lessons)>0)
+                                @foreach ($lessons as $lesson)
+                                    <tr>
+                                        <th scope="row">{{$loop->iteration}}</th>
+                                        <td>{{$lesson->title}}</td>
+                                        <td> {{$lesson->module->title}}</td>
+                                        <td class="text-center align-middle">    
+                                            @if ($lesson->deleted_at==null)
+                                                <a href="{{route('lessons.edit', $lesson)}}" class="text-warning mx-2"><i class="bi bi-pen"></i></a>
+                                                <form action="{{route('lessons.destroy', $lesson)}}" method="POST" style="display: inline-block" onsubmit="return confirm('Etes-vous sûr de vouloir supprimer cette leçon  ?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-link p-0 m-0 text-danger form-button" title="supprimer">
+                                                        <i class="bi bi-trash"></i> 
+                                                    </button>
+                                                </form>
+                                            @else
+                                                <form action="{{route('lessons.restore', ['lesson'=>$lesson->id])}}" method="POST" style="display: inline-block" onsubmit="return confirm('Etes-vous sûr de vouloir restaurer cette leçon ?')">
+                                                    @csrf
+                                                    @method('PATCH')
+                                                    <button type="submit" class="btn btn-link p-0 m-0 text-success form-button" title="restaurer">
+                                                        <i class="bi bi-arrow-clockwise"></i> 
+                                                    </button>
+                                                </form>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endif
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection --}}
